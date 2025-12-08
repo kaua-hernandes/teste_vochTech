@@ -17,6 +17,7 @@ O sistema foi construído utilizando as seguintes tecnologias:
 * **Laravel Sail** (para ambiente de desenvolvimento Dockerizado)
 * **Queue** (para processamento assíncrono de exportações)
 * **Mailpit** (para captura e visualização de emails de teste)
+* **spatie/laravel-activitylog** (para auditoria)
 
 #### Principais Recursos:
 
@@ -26,7 +27,6 @@ O sistema foi construído utilizando as seguintes tecnologias:
 * Captura de emails de teste pelo **Mailpit** na porta `8025`.
 * **Seeders** incluídos para popular o banco de dados com dados de teste.
 * Validação de campos com mensagens de erro.
-* Confirmações de exclusão.
 
 ---
 
