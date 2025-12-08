@@ -29,13 +29,15 @@ class ColaboradorIndex extends Component
 
     public $hasUnidade = false;
 
-   
+    // EXPORTAÇÃO
     public $exportModalOpen = false;
     public $unidades = [];
     public $filterUnidade = '';
     public $exportFile = null; 
 
-   
+    // FLAG QUE INDICA QUE O USUÁRIO CLICOU EM "GERAR"
+    public $exportReady = false;
+
     protected function rules()
     {
         return [
@@ -64,7 +66,6 @@ class ColaboradorIndex extends Component
         $this->hasUnidade = Unidade::exists();
     }
 
-   
     public function updatingSearch()
     {
         $this->resetPage();
@@ -86,7 +87,6 @@ class ColaboradorIndex extends Component
         $this->showUnidadeList = false;
     }
 
-  
     public function openModal($id = null)
     {
         if (!$this->hasUnidade) {
@@ -146,13 +146,13 @@ class ColaboradorIndex extends Component
         $this->confirmingDelete = null;
     }
 
-   
     public function openExportModal()
     {
         $this->exportModalOpen = true;
         $this->unidades = Unidade::orderBy('nome_fantasia')->get();
         $this->filterUnidade = '';
         $this->exportFile = null;
+        $this->exportReady = false;
     }
 
     public function export()
@@ -168,7 +168,9 @@ class ColaboradorIndex extends Component
 
         $this->exportModalOpen = false;
         $this->exportFile = null;
-        session()->flash('message', 'Exportação iniciada! Clique em "Verificar arquivo" quando estiver pronta.');
+        $this->exportReady = true;
+
+        session()->flash('message', 'Exportação iniciada! Agora clique em "Verificar arquivo".');
     }
 
     public function checkExport()

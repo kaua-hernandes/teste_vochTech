@@ -178,6 +178,7 @@
         </div>
     @endif
 
+    @if($exportReady)
     <div class="flex items-center gap-2 mt-4">
         <button wire:click="checkExport"
                 class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded shadow">
@@ -190,5 +191,7 @@
             </a>
         @endif
     </div>
+@endif
+
 
 </div>
