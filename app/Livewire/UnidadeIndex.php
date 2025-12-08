@@ -33,7 +33,7 @@ class UnidadeIndex extends Component
         return [
             'nome_fantasia' => 'required|string|min:2',
             'razao_social'  => 'required|string|min:2',
-            'cnpj'          => 'required|string|size:14|unique:unidade,cnpj,' . $this->unidadeId,
+            'cnpj'          => 'required|string|size:18|unique:unidade,cnpj,' . $this->unidadeId,
             'bandeira_id'   => 'required|exists:bandeira,id',
         ];
     }

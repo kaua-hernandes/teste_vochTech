@@ -153,6 +153,7 @@
                 <input type="text"
                        wire:model.defer="cnpj"
                        placeholder="CNPJ"
+                       x-mask="99.999.999/9999-99"
                        class="border border-gray-300 rounded px-4 py-2 w-full mb-4">
 
                 @error('cnpj') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
@@ -231,5 +232,5 @@
         </div>
     @endif
 
-
 </div>
+

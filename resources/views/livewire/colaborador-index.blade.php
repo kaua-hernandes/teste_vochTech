@@ -104,14 +104,7 @@
                 @error('email') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
 
                 <input type="text" wire:model.defer="cpf" placeholder="CPF do colaborador" maxlength="14"
-                       x-data x-init="$el.addEventListener('input', () => {
-                            let v = $el.value.replace(/\D/g,'');
-                            v = v.replace(/^(\d{3})(\d)/, '$1.$2');
-                            v = v.replace(/^(\d{3})\.(\d{3})(\d)/, '$1.$2.$3');
-                            v = v.replace(/\.(\d{3})(\d)/, '.$1-$2');
-                            $el.value = v;
-                            @this.set('cpf', v);
-                       })"
+                       x-mask="999.999.999-99"
                        class="border border-gray-300 rounded px-4 py-2 w-full mb-2 focus:ring-2 focus:ring-blue-500 focus:outline-none">
                 @error('cpf') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
 
@@ -199,6 +192,3 @@
     </div>
 
 </div>
-
-<script src="//unpkg.com/alpinejs" defer></script>
-<script src="//unpkg.com/alpinejs-mask" defer></script>
