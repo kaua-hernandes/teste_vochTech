@@ -1,4 +1,4 @@
-## 📝 Teste VochTech
+## Teste VochTech
 
 <p align="center"><a href="#"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 <p align="center"><a href="#"><img src="https://img.shields.io/badge/Laravel-Framework-red" alt="Laravel"></a> <a href="#"><img src="https://img.shields.io/badge/PHP-8.2-blue" alt="PHP"></a> <a href="#"><img src="https://img.shields.io/badge/MySQL-Database-orange" alt="MySQL"></a> <a href="#"><img src="https://img.shields.io/badge/Livewire-Livewire-brightgreen" alt="Livewire"></a> <a href="#"><img src="https://img.shields.io/badge/License-MIT-lightgrey" alt="License"></a></p>
@@ -7,7 +7,7 @@ Este projeto é um sistema de cadastro de **Colaboradores**, **Unidades**, **Ban
 
 ---
 
-### ✨ Tecnologias e Funcionalidades
+### Tecnologias e Funcionalidades
 
 O sistema foi construído utilizando as seguintes tecnologias:
 
@@ -20,17 +20,17 @@ O sistema foi construído utilizando as seguintes tecnologias:
 
 #### Principais Recursos:
 
-* 🔄 CRUD completo (Criar, Editar, Excluir) para todas as entidades via **Modals Livewire**.
-* 🔍 Busca em **tempo real** e **Autocomplete** em campos relacionados.
-* 📊 Exportação de colaboradores para **Excel** processada em *background* via **Queue**.
-* 📧 Captura de emails de teste pelo **Mailpit** na porta `8025`.
-* 🌱 **Seeders** incluídos para popular o banco de dados com dados de teste.
-* 🛡️ Validação de campos com mensagens de erro.
-* 🗑️ Confirmações de exclusão.
+* CRUD completo (Criar, Editar, Excluir) para todas as entidades via **Modals Livewire**.
+* Busca em **tempo real** e **Autocomplete** em campos relacionados.
+* Exportação de colaboradores para **Excel** processada em *background* via **Queue**.
+* Captura de emails de teste pelo **Mailpit** na porta `8025`.
+* **Seeders** incluídos para popular o banco de dados com dados de teste.
+* Validação de campos com mensagens de erro.
+* Confirmações de exclusão.
 
 ---
 
-### 🚀 Primeiros Passos
+### Primeiros Passos
 
 O projeto utiliza **Laravel Sail** e **Docker** para gerenciamento do ambiente.
 
