@@ -1,66 +1,79 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## 📝 Teste VochTech
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<p align="center"><a href="#"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<p align="center"><a href="#"><img src="https://img.shields.io/badge/Laravel-Framework-red" alt="Laravel"></a> <a href="#"><img src="https://img.shields.io/badge/PHP-8.2-blue" alt="PHP"></a> <a href="#"><img src="https://img.shields.io/badge/MySQL-Database-orange" alt="MySQL"></a> <a href="#"><img src="https://img.shields.io/badge/Livewire-Livewire-brightgreen" alt="Livewire"></a> <a href="#"><img src="https://img.shields.io/badge/License-MIT-lightgrey" alt="License"></a></p>
 
-## About Laravel
+Este projeto é um sistema de cadastro de **Colaboradores**, **Unidades**, **Bandeiras** e **Grupos Econômicos**, desenvolvido como teste prático para uma vaga.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### ✨ Tecnologias e Funcionalidades
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+O sistema foi construído utilizando as seguintes tecnologias:
 
-## Learning Laravel
+* **Laravel 10** e **PHP 8.2**
+* **MySQL**
+* **Livewire** (para interatividade reativa, com modais para CRUD)
+* **Laravel Sail** (para ambiente de desenvolvimento Dockerizado)
+* **Queue** (para processamento assíncrono de exportações)
+* **Mailpit** (para captura e visualização de emails de teste)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+#### Principais Recursos:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+* 🔄 CRUD completo (Criar, Editar, Excluir) para todas as entidades via **Modals Livewire**.
+* 🔍 Busca em **tempo real** e **Autocomplete** em campos relacionados.
+* 📊 Exportação de colaboradores para **Excel** processada em *background* via **Queue**.
+* 📧 Captura de emails de teste pelo **Mailpit** na porta `8025`.
+* 🌱 **Seeders** incluídos para popular o banco de dados com dados de teste.
+* 🛡️ Validação de campos com mensagens de erro.
+* 🗑️ Confirmações de exclusão.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+### 🚀 Primeiros Passos
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+O projeto utiliza **Laravel Sail** e **Docker** para gerenciamento do ambiente.
 
-### Premium Partners
+#### 1. Instalação e Configuração
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+Siga os passos abaixo para configurar o projeto:
 
-## Contributing
+```bash
+# 1. Clone o repositório e entre na pasta do projeto
+git clone [https://github.com/kaua-hernandes/teste_vochTech.git](https://github.com/kaua-hernandes/teste_vochTech.git)
+cd teste_vochTech
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+# 2. Suba os containers Docker do Laravel Sail em background
+./vendor/bin/sail up -d
 
-## Code of Conduct
+# 3. Instale as dependências PHP (dentro do container)
+./vendor/bin/sail composer install
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# 4. Gere a chave do aplicativo
+./vendor/bin/sail artisan key:generate
 
-## Security Vulnerabilities
+# 5. Crie o link para o armazenamento público
+./vendor/bin/sail artisan storage:link
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# 6. Rode as migrations e seeders para criar e popular o banco de dados
+./vendor/bin/sail artisan migrate --seed
 
-## License
+# 7. Rode o worker da queue (em um terminal separado) para processar exportações em background
+./vendor/bin/sail artisan queue:work
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# Acesso à Aplicação
+Aplicação Principal: http://localhost
+Visualização de Emails (Mailpit): http://localhost:8025
+
+Fluxo de Uso Recomendado
+Acesse http://localhost.
+
+Crie as entidades na seguinte ordem: Grupos Econômicos, Bandeiras e Unidades.
+
+Crie Colaboradores, selecionando a unidade correspondente.
+
+Utilize a busca em tempo real e os modais para gerenciar os dados.
+
+Para testar a exportação, use o modal de exportação de Colaboradores (os arquivos são processados em background pelo worker da queue).
+
+Observação: Os seeders já fornecem dados de teste para todas as entidades, permitindo que você comece a explorar o sistema imediatamente.
