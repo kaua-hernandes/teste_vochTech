@@ -7,6 +7,11 @@ Este projeto é um sistema de cadastro de **Colaboradores**, **Unidades**, **Ban
 
 ---
 
+<h2>Apresentação do Projeto</h2>
+Link do vídeo apresentando projeto: (https://drive.google.com/file/d/1K9BXuuGJPO1DBDYC3YoPgB0wjoOLTnc2/view?usp=sharing)
+
+
+
 ### Tecnologias e Funcionalidades
 
 O sistema foi construído utilizando as seguintes tecnologias:
@@ -40,7 +45,7 @@ Siga os passos abaixo para configurar o projeto:
 
 ```bash
 # 1. Clone o repositório e entre na pasta do projeto
-git clone [https://github.com/kaua-hernandes/teste_vochTech.git](https://github.com/kaua-hernandes/teste_vochTech.git)
+git clone https://github.com/kaua-hernandes/teste_vochTech.git
 cd teste_vochTech
 
 # 2. Suba os containers Docker do Laravel Sail em background
@@ -55,10 +60,14 @@ cd teste_vochTech
 # 5. Crie o link para o armazenamento público
 ./vendor/bin/sail artisan storage:link
 
-# 6. Rode as migrations e seeders para criar e popular o banco de dados
+# 6. Instale as dependências JS e compile os assets
+./vendor/bin/sail npm install
+./vendor/bin/sail npm run dev
+
+# 7. Rode as migrations e seeders para criar e popular o banco de dados
 ./vendor/bin/sail artisan migrate --seed
 
-# 7. Rode o worker da queue (em um terminal separado) para processar exportações em background
+# 8. Rode o worker da queue (em um terminal separado) para processar exportações em background
 ./vendor/bin/sail artisan queue:work
 
 # Acesso à Aplicação
